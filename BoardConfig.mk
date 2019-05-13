@@ -33,7 +33,7 @@ TARGET_NO_BOOTLOADER := true
 
 # Kernel
 BOARD_KERNEL_BASE := 0x80000000
-BOARD_KERNEL_CMDLINE := console=ttyHSL0,115200,n8 androidboot.console=ttyHSL0 androidboot.hardware=qcom androidboot.memcg=true user_debug=30 msm_rtb.filter=0x237 ehci-hcd.park=3 androidboot.bootdevice=7824900.sdhci lpm_levels.sleep_disabled=1 earlycon=msm_hsl_uart,0x78B0000
+BOARD_KERNEL_CMDLINE := console=ttyHSL0,115200,n8 androidboot.console=ttyHSL0 androidboot.hardware=qcom androidboot.memcg=true user_debug=30 msm_rtb.filter=0x237 ehci-hcd.park=3 androidboot.bootdevice=7824900.sdhci lpm_levels.sleep_disabled=1 earlycon=msm_hsl_uart,0x78B0000 firmware_class.path=/vendor/firmware_mnt/image loop.max_part=7 loglevel=0 loglevel=0
 BOARD_KERNEL_PAGESIZE := 2048
 BOARD_KERNEL_TAGS_OFFSET := 0x00000100
 BOARD_RAMDISK_OFFSET := 0x01000000
@@ -41,9 +41,10 @@ TARGET_KERNEL_APPEND_DTB := true
 BOARD_KERNEL_IMAGE_NAME := zImage-dtb
 TARGET_KERNEL_ARCH := arm
 BOARD_MKBOOTIMG_ARGS := --ramdisk_offset $(BOARD_RAMDISK_OFFSET) --tags_offset $(BOARD_KERNEL_TAGS_OFFSET)
-KERNEL_TOOLCHAIN_PREFIX := arm-linux-androidkernel-
-TARGET_KERNEL_CONFIG := E2M-perf_defconfig
-TARGET_KERNEL_SOURCE := kernel/nokia/msm8937
+#KERNEL_TOOLCHAIN_PREFIX := arm-linux-androidkernel-
+#TARGET_KERNEL_CONFIG := E2M-perf_defconfig
+#TARGET_KERNEL_SOURCE := kernel/nokia/msm8937
+TARGET_PREBUILT_KERNEL := $(LOCAL_PATH)/kernel
 
 # Partitions
 BOARD_BOOTIMAGE_PARTITION_SIZE := 16777216
