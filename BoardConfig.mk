@@ -69,7 +69,7 @@ BOARD_USES_QCOM_HARDWARE := true
 
 # TWRP Configuration
 TW_SCREEN_BLANK_ON_BOOT := true
-TW_EXTRA_LANGUAGES := true
+#TW_EXTRA_LANGUAGES := true
 TW_THEME := portrait_hdpi
 TW_MAX_BRIGHTNESS := 255
 TW_BRIGHTNESS_PATH := "/sys/class/leds/lcd-backlight/brightness"
@@ -89,3 +89,6 @@ TW_INCLUDE_FUSE_EXFAT := true
 
 # NTFS Support
 TW_INCLUDE_FUSE_NTFS := true
+
+# Enable Toybox
+TW_USE_TOOLBOX := true
